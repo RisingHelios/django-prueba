@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Django University App</title>
+</head>
+<body>
+<h1>Hola!</h1>
+<h2>Clase: {{ clase }}</h2>
+{% if estudiantes %}
+    <table border='1'>
+    	<thead>
+    		<th>ID</th>
+    		<th>NOMBRE</th>
+    		<th>APELLIDOS</th>
+    		<th>EDAD</th>
+    		<th>EMAIL</th>
+    	</thead>
+    	{% for estudiantes in estudiantes %}
+    	<tbody>
+	     <td> {{ estudiantes.id }} </td>
+	     <td> {{ estudiantes.nombre }} </td>
+	     <td> {{ estudiantes.apellidos }} </td>
+	     <td> {{ estudiantes.edad }} </td>
+	     <td> {{ estudiantes.email }} </td>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endif %}
+</body>
+</html>
